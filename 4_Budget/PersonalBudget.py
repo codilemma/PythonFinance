@@ -6,6 +6,9 @@ from matplotlib import pyplot as plt
 from recurrent import RecurringEvent
 from dateutil import rrule
 
+TODAY = pd.Timestamp(2020,9,23).normalize()
+END = TODAY + datetime.timedelta(days=365)
+
 class PersonalBudget:
     '''Functions that will help you create a Personal Finace Budget
        (start_date, yaml_file_path)
@@ -15,17 +18,12 @@ class PersonalBudget:
 
     def __init__(self,yaml_file):
         '''Initialize the Personal Budget with your cash flow file'''
-        self.yaml_file = yaml_file
         # Load Cash flow yaml file.
-        with open(self.yaml_file) as file:
+        with open(yaml_file) as file:
             self.budget = yaml.load(file)
 
-        # Initialize start and end date. try to keep less than one year.
-        self.today = pd.Timestamp(2020, 9, 22).normalize
-        self.end   = self.today + datetime.timedelta(days=365)
-
         #initialize Calender
-        self.calendar = pd.DataFrame(index=pd.date_range(start=self.today, end=self.end))
+        self.calendar = pd.DataFrame(index=pd.date_range(start=TODAY, end=END))
 
         # Build the Calender
         self.build_calendar()
@@ -61,7 +59,7 @@ class PersonalBudget:
         rr = rrule.rrulestr(r.get_RFC_rrule())
         return [
             pd.to_datetime(date).normalize()
-            for date in rr.between(self.today, self.end)
+            for date in rr.between(TODAY, END)
         ]
         #except ValueError as e:
         #    raise ValueError('Invalid Frequency')

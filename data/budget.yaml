@@ -1,6 +1,6 @@
 bank:
     frequency: today
-    amount: 2000
+    amount: 4000
 income:
     frequency: every 2 weeks on Friday
     amount: 1000
@@ -10,9 +10,6 @@ rent:
 fun:
     frequency: every week on Friday and Saturday
     amount: -40
-vacation:
-    frequency: 2021-07-01
-    amount: -1000
 savings:
     frequency: every Monday starting in August
     amount: -50

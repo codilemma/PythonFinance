@@ -1,0 +1,60 @@
+bank:
+    frequency: once on October 1st
+    amount: 5000
+income:
+    frequency: every 2 weeks on Friday
+    amount: 2300
+
+
+rent:
+    frequency: every month
+    amount: -1500
+cell:
+    frequency: on the 15th day of every month
+    amount: -100
+internet:
+    frequency: on the 20th day of every month
+    amount: -50
+gym:
+    frequency: on the 28th day of every month
+    amount: -40
+uber_pass:
+    frequency: on the 20st day of every month
+    amount: -10
+power:
+    frequency: on the 10th day of every month
+    amount: -100
+safari_books:
+    frequency: on the 10th day of every month
+    amount: -40   
+duolingo:
+    frequency: on the 10th day of every month
+    amount: -15  
+spotify:
+    frequency: on the 10th day of every month
+    amount: -10  
+renters_ins:
+    frequency: on the 10th day of every month
+    amount: -20
+auto_ins:
+    frequency: on the 10th day of every month
+    amount: -80
+personal_loan:
+    frequency: on the 10th day of every month
+    amount: -500
+student_loan:
+    frequency: on the 10th day of every month
+    amount: -500
+
+food_drink:
+    frequency: every 2 weeks on Friday
+    amount: -250
+savings:
+    frequency: every 2 weeks on Friday
+    amount: -200
+cody:
+    frequency: every 2 weeks on Friday
+    amount: -100
+yuko:
+    frequency: every 2 weeks on Friday
+    amount: -100

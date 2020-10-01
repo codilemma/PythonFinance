@@ -19,10 +19,14 @@ class PersonalBudget:
         '''Initialize the Personal Budget with your cash flow file'''
 
         # Get Start and End Date
-        self.today = pd.Timestamp(start_date[0],start_date[1],start_date[2]).normalize()
+        self.today = pd.Timestamp(start_date[0],
+                                  start_date[1],
+                                  start_date[2]).normalize()
+
         self.end   = self.today + datetime.timedelta(days=365)
 
         # Load Cash flow yaml file.
+        # TODO: Add Gui for File Selection & Add Excel Import
         with open(yaml_file) as file:
             self.budget = yaml.load(file)
 
@@ -30,10 +34,12 @@ class PersonalBudget:
         self.frequency = 0
         self.amount = 0
         self.dates = 0
-        self.calendar = pd.DataFrame(index=pd.date_range(start=self.today, end=self.end))
+        self.calendar = pd.DataFrame(index=pd.date_range
+                                    (start=self.today,
+                                     end=self.end))
 
         # Build the Calender
-        self.build_calendar()
+        # self.build_calendar()
         #print(self.calendar.head(35))
         
     def build_calendar(self):
@@ -49,11 +55,13 @@ class PersonalBudget:
             )
             self.calendar = pd.concat([self.calendar, i], axis=1).fillna(0)
         
-        self.calendar['total'] = self.calendar.sum(axis=1)
-        self.calendar['cum_total'] = self.calendar['total'].cumsum()
-        self.calendar['savings_total'] = self.calendar['savings'].cumsum()
-        self.calendar['yuko_total'] = self.calendar['yuko'].cumsum()
-        self.calendar['cody_total'] = self.calendar['cody'].cumsum()
+        #self.calendar['total'] = self.calendar.sum(axis=1)
+        #self.calendar['cum_total'] = self.calendar['total'].cumsum()
+        #self.calendar['savings_total'] = self.calendar['savings'].cumsum()
+        #self.calendar['yuko_total'] = self.calendar['yuko'].cumsum()
+        #self.calendar['cody_total'] = self.calendar['cody'].cumsum()
+
+        return self.calendar
       
     def get_dates(self, frequency):
         ''' Will create irregular cash flow frequency aliases'''

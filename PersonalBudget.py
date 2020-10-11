@@ -14,7 +14,6 @@ class PersonalBudget:
        enter yaml_file
     '''
 
-
     def __init__(self,start_date,yaml_file):
         '''Initialize the Personal Budget with your cash flow file'''
 
